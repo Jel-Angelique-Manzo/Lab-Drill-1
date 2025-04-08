@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="icon" href="E:\MANZO_2B_WEBSYSTEM2/cupofcoffee.jpg." type="image/png">
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('C:\Users/USER/Documents/LD1FINALS_2B_MANZ0/bg.jpg'); background-size: cover; ">
+        background-size: cover;
+        
+    }
+    header {
+        background-color: #988558;
+        color: white;             //
+        padding: 15px 20px;
+        text-align: center;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        padding: 10px 0;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+    nav a:hover {
+        background-color: #6f4f29; //beige
+    }
+    section {
+        padding: 20px;
+        text-align: center;
+    }
+    .menu-item {
+        display: inline-block;
+        background: white;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        width: 200px;
+    }
+    .menu-item button {
+        background-color: #967969;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .menu-item button:hover {
+        background-color: #6f4f29; //beige
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .cart-item button {
+        background-color: #f44336;
+        color: black;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .cart-item button:hover {
+        background-color: #e53935;
+    }
+    .total-section {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+    .receipt-button {
+        background-color: #4CAF50;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .receipt-button:hover {
+        background-color: #45a049;
+    }
+    /* Add the color styles for the headings */
+    h1, h3 {
+        color: black; /* You can change this to your preferred color */
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Welcome to Brew Haven Coffee Shop</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="Menu(1).html">Menu</a>
+        <a href="About%20us.html">About Us</a>
+        <a href="GALLERY.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section id="menu">
+        <h1>Our Menu</h1>
+
+        <br><br><br>
+
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+
+        <br><br><br>
+        <div class="total-section">
+            <button onclick="showTotal()">Total: ₱0</button>
+        </div>
+
+         <br><br><br>
+        <button class="receipt-button" onclick="showReceipt()">Get Receipt</button>
+
+        <br> <br><br> <br>
+
+         <h3>Coffee</h3>
+        <div class="menu-item">
+            <h3>Espresso</h3>
+            <p>Price: ₱135</p>
+            <button onclick="addToCart('Espresso', 135)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Latte</h3>
+            <p>Price: ₱140</p>
+            <button onclick="addToCart('Latte', 140)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Cappuccino</h3>
+            <p>Price: ₱135</p>
+            <button onclick="addToCart('Cappuccino', 135)">Add to Order</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Macchiato</h3>
+            <p>Price: ₱140</p>
+            <button onclick="addToCart('Macchiato', 140)">Add to Order</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Americano</h3>
+            <p>Price: ₱135</p>
+            <button onclick="addToCart('Americano', 135)">Add to Order</button>
+        </div>
+
+        <br><br><br><br>
+
+        <h3>Non-Coffee</h3>
+        <div class="menu-item">
+            <h3>Hot Chocolate</h3>
+            <p>Price: ₱120</p>
+            <button onclick="addToCart('Hot Chocolate', 120)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Milkshake</h3>
+            <p>Price: ₱110</p>
+            <button onclick="addToCart('Milkshake', 110)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Smoothie</h3>
+            <p>Price: ₱130</p>
+            <button onclick="addToCart('Smoothie', 130)">Add to Order</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Lemonade</h3>
+            <p>Price: ₱120</p>
+            <button onclick="addToCart('Lemonade', 120)">Add to Order</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Vanila Bean</h3>
+            <p>Price: ₱130</p>
+            <button onclick="addToCart('Vanila Bean', 130)">Add to Order</button>
+        </div>
+
+        <br><br><br><br>
+
+        <h3>Tea</h3>
+        <div class="menu-item">
+            <h3>Lemon Tea</h3>
+            <p>Price: ₱90</p>
+            <button onclick="addToCart('Lemon Tea', 90)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Green Tea</h3>
+            <p>Price: ₱95</p>
+            <button onclick="addToCart('Green Tea', 95)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Mint Tea</h3>
+            <p>Price: ₱90</p>
+            <button onclick="addToCart('Mint Tea', 90)">Add to Order</button>
+        </div>
+
+         <br><br><br><br>
+
+        <h3>Pastries</h3>
+        <div class="menu-item">
+            <h3>Chocolate Waffle</h3>
+            <p>Price: ₱65</p>
+            <button onclick="addToCart('Chocolate Waffle', 65)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Cinnamon Roll</h3>
+            <p>Price: ₱100</p>
+            <button onclick="addToCart('Cinnamon Roll', 100)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <h3>Brownies</h3>
+            <p>Price: ₱90</p>
+            <button onclick="addToCart('Brownies', 90)">Add to Order</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Cheesecake</h3>
+            <p>Price: ₱120</p>
+            <button onclick="addToCart('Cheesecake', 120)">Add to Order</button>
+        </div>
+
+        <div class="menu-item">
+            <h3>Croissant</h3>
+            <p>Price: ₱100</p>
+            <button onclick="addToCart('Croissant', 100)">Add to Order</button>
+        </div>
+
+       
+    </section>
+
+    <script>
+        // Add to cart
+        function addToCart(itemName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if item already exists in cart
+            let itemExists = false;
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].item === itemName) {
+                    cart[i].quantity += 1;
+                    itemExists = true;
+                    break;
+                }
+            }
+
+            // If item doesn't exist, add new item to cart
+            if (!itemExists) {
+                cart.push({ item: itemName, quantity: 1, price: price });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Update the cart display
+        function updateCartDisplay() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+
+            cartItems.forEach(item => {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+                cartItemDiv.innerHTML = `
+                    <span>${item.item} (x${item.quantity}) - ₱${item.price * item.quantity}</span>
+                    <button onclick="removeFromCart('${item.item}')">Remove</button>
+                `;
+                cartContainer.appendChild(cartItemDiv);
+            });
+
+            showTotal();
+        }
+
+        // Remove item from cart
+        function removeFromCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.item !== itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartDisplay();
+        }
+
+        // Show total price
+        function showTotal() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = 0;
+
+            cart.forEach(item => {
+                total += item.quantity * item.price;
+            });
+
+            const totalButton = document.querySelector('.total-section button');
+            totalButton.textContent = `Total: ₱${total}`;
+        }
+
+        // Show receipt
+        function showReceipt() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let receiptContent = 'Receipt:\n\n';
+
+            cart.forEach(item => {
+                receiptContent += `${item.item} (x${item.quantity}) - ₱${item.price * item.quantity}\n`;
+            });
+
+            let total = 0;
+            cart.forEach(item => {
+                total += item.quantity * item.price;
+            });
+
+            receiptContent += `\nTotal: ₱${total}`;
+
+            alert(receiptContent);
+        }
+
+        // Initialize cart display
+        updateCartDisplay();
+    </script>
+</body>
+</html>
